@@ -12,8 +12,8 @@ namespace smuTutoringDataApp
 
         //NOTE: WE HARD CODE THIS IN
 
-        private static string GLOBAL_STATIC_FIRST_LOOKUP = "H:\\smuLoginApp\\";
-       // private static string GLOBAL_STATIC_FIRST_LOOKUP = "C:\\Users\\James\\SmuApp Info"; //    For testing
+       // private static string GLOBAL_STATIC_FIRST_LOOKUP = "H:\\smuLoginApp\\";
+       private static string GLOBAL_STATIC_FIRST_LOOKUP = "C:\\Users\\James\\SmuApp Info"; //    For testing
 
         // Properties for settings
         public static string masterEmailAdress { get; set; }
