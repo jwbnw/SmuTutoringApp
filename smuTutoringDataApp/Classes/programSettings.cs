@@ -10,10 +10,10 @@ namespace smuTutoringDataApp
     class programSettings
     {
 
-        //NOTE: WE HARD CODE THIS IN
+        //NOTE: Hard code first dir lookup
 
-        private static string GLOBAL_STATIC_FIRST_LOOKUP = "H:\\smuLoginApp\\";
-       // private static string GLOBAL_STATIC_FIRST_LOOKUP = "C:\\Users\\James\\SmuApp Info"; //    For testing
+       // private static string GLOBAL_STATIC_FIRST_LOOKUP = "H:\\somePath";
+          private static string GLOBAL_STATIC_FIRST_LOOKUP = "C:\\SomePath"; //    -- testing
 
         // Properties for settings
         public static string masterEmailAdress { get; set; }
@@ -31,7 +31,6 @@ namespace smuTutoringDataApp
 
         public static void loadMainSettings()
         {
-
             try
             {
                 string[] lines = System.IO.File.ReadAllLines(GLOBAL_STATIC_FIRST_LOOKUP + "\\MainSettings.txt");
@@ -83,9 +82,7 @@ namespace smuTutoringDataApp
 
                 System.IO.File.WriteAllLines(GLOBAL_STATIC_FIRST_LOOKUP + "\\MainSettings.txt", lines);
                 studentInfoCSVPath = dlg.FileName;
-
             }
-
             else
             {
                 studentInfoCSVPath = null;
@@ -116,13 +113,9 @@ namespace smuTutoringDataApp
             //set the path
             if (result == true)
             {
-
                 string[] lines = System.IO.File.ReadAllLines(GLOBAL_STATIC_FIRST_LOOKUP + "\\MainSettings.txt");
-
                 lines[2] = dlg.FileName;
-
                 System.IO.File.WriteAllLines(GLOBAL_STATIC_FIRST_LOOKUP + "\\MainSettings.txt", lines);
-
                 masterTutorListPath = dlg.FileName;
             }
 
@@ -142,7 +135,6 @@ namespace smuTutoringDataApp
         //**************************************************
         public static void getMasterStemCourseCheckList()
         {
-
             // Open file dialogue obj
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
 
@@ -158,22 +150,17 @@ namespace smuTutoringDataApp
             {
 
                 string[] lines = System.IO.File.ReadAllLines(GLOBAL_STATIC_FIRST_LOOKUP + "\\MainSettings.txt");
-
                 lines[3] = dlg.FileName;
-
                 System.IO.File.WriteAllLines(GLOBAL_STATIC_FIRST_LOOKUP + "\\MainSettings.txt", lines);
-
-
                 masterCourseCheckListPath = dlg.FileName;
             }
-
             else
             {
                 masterCourseCheckListPath = null;
             }
         }
 
-        //NOTE: SINCE MASTER SAVE LOCATION IS STATIC WE NOT NEED THIS FUNCION I AM LEAVING IT IN INCASE I NEED THE ALGORITHM FOR FUTURE BUILDS
+        //NOTE: Leaving for later builds
         //**************************************************
         //Method Name: getMasterSaveLocation
         //Description: This method will open up a dialogue
@@ -222,7 +209,7 @@ namespace smuTutoringDataApp
         {
             try
             {
-                //Create new stream write object and assign it a path/
+                //Create new stream write object and assign it a path
                 StreamWriter sw = new StreamWriter(filePath + "\\FinalDataTable.csv", false); //Note false = new file, True = append pre-existing doc
 
                 //Get the column count from the data table

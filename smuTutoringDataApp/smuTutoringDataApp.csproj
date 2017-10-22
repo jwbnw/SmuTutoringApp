@@ -91,12 +91,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="csvInputClass.cs" />
-    <Compile Include="dataTables.cs" />
+    <Compile Include="Classes\csvInputClass.cs" />
+    <Compile Include="Classes\dataTables.cs" />
     <Compile Include="emailSettings.xaml.cs">
       <DependentUpon>emailSettings.xaml</DependentUpon>
     </Compile>
-    <Compile Include="programSettings.cs" />
+    <Compile Include="Classes\programSettings.cs" />
     <Compile Include="settingsPage.xaml.cs">
       <DependentUpon>settingsPage.xaml</DependentUpon>
     </Compile>
@@ -109,7 +109,7 @@
     <Compile Include="startPage.xaml.cs">
       <DependentUpon>startPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="studentInfo.cs" />
+    <Compile Include="Classes\studentInfo.cs" />
     <Page Include="emailSettings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -186,6 +186,7 @@
   <ItemGroup>
     <None Include="Resources\logo1.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

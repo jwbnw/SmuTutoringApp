@@ -6,11 +6,8 @@ namespace smuTutoringDataApp
 {
     public class dataTables
     {
-
-        // The master DataTable property and the Waiver Table property
+        
         public static DataTable masterDataTable { get; set; }
-        //public static DataTable waiverTable { get; set; }
-
 
         //*************************************************
         //Method Name: CreateTable
@@ -103,7 +100,11 @@ namespace smuTutoringDataApp
 
         }
 
-        //Check 4 Waiver
+        //******************************************************
+        //Method Name: Waiver
+        //Description: This method will check to see if
+        //the student has signed the waiver to use the app yet
+        //******************************************************
         public static bool checkForWaiver(string userID)
         {
             DataRow[] rowArrayToMatch = masterDataTable.Select("studentID='" + userID + "'");
@@ -144,7 +145,6 @@ namespace smuTutoringDataApp
             }
         }
 
-
         //***************************************************************
         //Method Name: WriteTheOutData
         //Description: This method takes in 4 arguments, the user ID,
@@ -183,7 +183,6 @@ namespace smuTutoringDataApp
             {
                 MessageBox.Show("Error No Match Found? Did you sign in? Please try again or ask for assistence.");
             }
-
             // If the No send alert is false we continue on
             else
             {
@@ -218,27 +217,16 @@ namespace smuTutoringDataApp
                             TimeSpan duration = DateTime.Parse(outTime).Subtract(DateTime.Parse(inTime));
 
                             string totalTime = duration.ToString();
-                            //take in time set to string see wat looks like
-                            //make int then subtract from out time made int
-                            //add to table via adding new row
-
-
-                            // Set the data(put in try catch block, kek)
-
                      
                             studentIdMatch[11] = totalTime;
                             studentIdMatch[10] = outTime;
                             studentIdMatch[8] = tutorName;
 
-                            //if pal needed and param in this function as a bool to corispond to signOut.cs then if statment here it write it
-
-
-                            //If student was here to study fill with study
                             if (studentIdMatch[7].ToString() == "Here To Study")
                             {
                                 studentIdMatch[12] = "STUDY";
                             }
-                            //Else fill with STEM
+
                             else
                             {
                                 studentIdMatch[12] = "STEM";
@@ -251,8 +239,6 @@ namespace smuTutoringDataApp
                 {
                     MessageBox.Show(ex.ToString());
                 }
-
-
             }
 
         }
@@ -262,21 +248,13 @@ namespace smuTutoringDataApp
         //Method Name: SetMasterTable
         //Description: This program will set the master table
         //with a table that it reads in from a .csv file that
-        //is provided via a parameter in the form of a string.
-        //The reason for not invoking the csvInput class here
-        //is due to the fact that an exact copy of the datatable
-        //is required this method does not use spacers due to 
-        //that this table needs to be a specific size. One
-        //spacer is left commented out to demonstrate 
-        //what this description mentions. The method itself
-        //is very similar to that used in the csvInout class.
+        //is provided via a parameter in the form of a string
         //*****************************************************
         public static void setMasterTable(string filePath)
         {
             //Run process in try-catch block
             try
             {
-
                 //Check file path for data
                 if (filePath != null)
                 {
@@ -298,10 +276,6 @@ namespace smuTutoringDataApp
                         csvDt.Columns.Add(headers);
                     }
 
-                    //Note: Spacer example mentioned in description
-                    // DataColumn spacer = new DataColumn("Spacer"); 
-                    //  csvDt.Columns.Add(spacer);
-
                     //Take each row of data, read it into data row then add to data table
                     for (int i = 1; i < csvRows.Length; i++)
                     {
@@ -310,7 +284,6 @@ namespace smuTutoringDataApp
                         dataRow.ItemArray = fields;
                         csvDt.Rows.Add(dataRow);
                     }
-
                     //Set master data table
                     masterDataTable = csvDt;
                 }
