@@ -15,7 +15,7 @@ namespace smuTutoringDataApp
             WindowState = WindowState.Maximized;
             WindowStyle = WindowStyle.None;
             InitializeComponent();
-            
+
             //Navigate to start page
             startPage sp = new startPage();
             mainFrame.NavigationService.Navigate(sp);
