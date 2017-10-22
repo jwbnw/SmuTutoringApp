@@ -75,7 +75,7 @@ namespace smuTutoringDataApp
         //getMasterSaveLocation() method from the
         //program Settings class. It will then 
         //check to see if the user has selected
-        //a path.
+        //a path. Not used in this build
 
         //****************************************
         //private void masterSaveLocation_Click(object sender, RoutedEventArgs e)

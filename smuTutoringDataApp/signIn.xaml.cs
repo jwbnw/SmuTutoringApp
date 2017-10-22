@@ -31,7 +31,6 @@ namespace smuTutoringDataApp
             //State condition
             if (idTxtBox.Text.Length == 10)
             {
-
                 //Create new student obj
                 studentInfo studentObj = new studentInfo();
 
@@ -46,8 +45,6 @@ namespace smuTutoringDataApp
                 {
                     //Set student name
                     nameTxtBox.Text = studentObj.userFirstName + " " + studentObj.userLastName;
-
-
                     //Set the users course list w/ some conditions. First when list is empty
                     if (studentObj.userCourseList != null && ClassListBox.Items.IsEmpty == true)
                     {
@@ -61,7 +58,6 @@ namespace smuTutoringDataApp
 
                     //Second if the list is not empty
                     else if (studentObj.userCourseList != null && ClassListBox.Items.IsEmpty == false)
-
                     {
 
                         //Clear prior data

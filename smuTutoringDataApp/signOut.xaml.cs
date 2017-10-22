@@ -74,7 +74,7 @@ namespace smuTutoringDataApp
                 //Set out time stamp and Pal or not
                 string outTimeStamp = DateTime.Now.ToString("h:mm:ss tt");
 
-                //Peer Assisted learning alg, they don't want it in this time around so I'm just commenting it out in-cas they change their minds
+                //Peer Assisted learning alg, in-event needed
 
                 //bool? palOrNah = palCheckBox.IsChecked;
 
