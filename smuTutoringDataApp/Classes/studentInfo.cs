@@ -9,7 +9,7 @@ namespace smuTutoringDataApp
 {
     class studentInfo
     {
-        //Properties to hold user information 
+        //user information 
         public string userFirstName { get; set; }
         public string userLastName { get; set; }
         public string userID { get; set; }
@@ -207,16 +207,13 @@ namespace smuTutoringDataApp
                 //set the userFirstName property
                 userFirstName = singleInfoRow[2].ToString();
                 userLastName = singleInfoRow[1].ToString();
-             
+
             }
             //Catch the most likely error
             catch
             {
                 MessageBox.Show("Error: No record found to match");
             }
-
         }
-
-
     }
 }

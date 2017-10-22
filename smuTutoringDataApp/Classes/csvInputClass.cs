@@ -5,13 +5,12 @@ namespace smuTutoringDataApp
 {
     class csvInputClass
     {
-        // Datatable used fro comparison 
+        // Datatable used for comparison 
         public DataTable compTable { get; set; } 
-
 
         //******************************************
         //Method Name: loadSetFromCSC
-        //Description: This method takes a file path
+        // Description: This method takes a file path
         // for a csv file and creates a 
         // datatable from said csv file.
         //******************************************
@@ -22,8 +21,6 @@ namespace smuTutoringDataApp
             {
                 //read .csv into string[]
                 string[] csvRows = System.IO.File.ReadAllLines(filePath); 
-
-
                 string[] fields = null;
 
                 //take the header row and split it up
@@ -34,9 +31,7 @@ namespace smuTutoringDataApp
                 foreach (string column in headerFeilds)
                 {
                     DataColumn headers = new DataColumn(column);
-
                     csvDt.Columns.Add(headers);
-
                 }
 
                 //Note: These are extra columns in the event there is some extra data in the .csv
@@ -55,7 +50,6 @@ namespace smuTutoringDataApp
                     csvDt.Rows.Add(dataRow);
                 }
                 return compTable = csvDt;
-
             }
             catch
             {
